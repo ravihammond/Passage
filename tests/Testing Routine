@@ -1,0 +1,44 @@
+//-------------------------TESTING ROUTINE-------------------------//
+
+Because my program is a computer game that generates nearly everything randomly, it is very hard to automate routine testing scenarios using the print to file and compare against expect method. For example I can't write a list of expected results to test if the player is interacting correctly with the surroundings because I can never know exactly where those objects are at any given time. The only way to test most of the game interactions and behaviours is to play the game and force myself into situations where I can tell if something is behaving correctly.
+
+Whenever I make a change to the game I repeat the following routine.
+
+///Routine///
+
+
+                 -Action-                                               -Expected outcome-
+
+********Testing Obstacle Interactions********
+
+1- Fly into a red Obstacle                                      Game Over
+2- Fly into a red Obstacle with invincible on                   Nothing should happen, game keeps going
+3- Fly into a red Obstacle with shield on                       Shield dissapears, game keeps going
+4- Fly into a red Obstacle with shield and invincible on        Nothing should happen, game keeps going
+5- Fly into a yellow Obstacle                                   Game Over
+6- Fly into a yellow Obstacle with invincible on                Nothing should happen, game keeps going
+7- Fly into a yellow Obstacle with shield on                    Shield dissapears, game keeps going
+8- Fly into a yellow Obstacle with shield and invincible on     Nothing should happen, game keeps going
+9- Fly into a blue Obstacle                                     Game Over
+10- Fly into a blue Obstacle with invincible on                 Nothing should happen, game keeps going
+11- Fly into a blue Obstacle with shield on                     Shield dissapears, game keeps going
+12- Fly into a blue Obstacle with shield and invincible on      Nothing should happen, game keeps going
+
+********Testing Border Interactions********
+
+1- Fly into a border                                            Game Over
+2- Fly into a border Obstacle with invincible on                Game Over
+3- Fly into a border Obstacle with shield on                    Shield dissapears, player moved to center position, game keeps going
+4- Fly into a border Obstacle with shield and invincible on     Shield dissapears, player moved to center position, invincible stays on, game keeps going
+
+********Testing Powerup Interactions********
+
+1- Fly into a Invincible Powerup                                All obstacles turn white, timer appears on screen, invincible count down set to 10
+2- Fly into a Invincible powerup with invincible on             All obstacles stay white, invincible count down set to 10
+3- Fly into a Invincible powerup with multiplier on             Nothing should happen, game keeps going
+4- Fly into a Multiplier powerup                                .5 is added to score multiplier, message appears on screen
+5- Fly into a Multiplier powerup with invincible on             .5 is added to score multiplier, message on screen updates
+6- Fly into a Multiplier powerup with a multiplier on           .5 is added to score multiplier, message on screen updates
+
+///Player Testing///
+Since the game is random, there are infinite possible interactions that the player can do. With infinite possbile interactions come unforseen bugs. To discover these unforseen problems I made friends test the game every day.
